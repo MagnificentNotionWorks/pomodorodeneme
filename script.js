@@ -1,4 +1,4 @@
-import React from "https://cdn.skypack.dev/react@17.0.1";
+/*import React from "https://cdn.skypack.dev/react@17.0.1";
 import ReactDOM from "https://cdn.skypack.dev/react-dom@17.0.1";
 
 const SESSION = "Session";
@@ -152,17 +152,17 @@ class App extends React.Component {
     "fa fa-play";
 
     return /*#__PURE__*/(
-      React.createElement("div", { className: "clock-container" }, /*#__PURE__*/
-      React.createElement(Timer, {
+      /*React.createElement("div", { className: "clock-container" }, /*#__PURE__*/
+     /* React.createElement(Timer, {
         timeLeft: this.clockify(),
         timerType: this.state.timerType,
         resetTimer: this.resetTimer,
         stopStartTimer: stopStartTimer,
         toggleStartStopTimer: this.toggleStartStopTimer }), /*#__PURE__*/
 
-      React.createElement("div", { className: "length-container" }, /*#__PURE__*/
-      React.createElement("div", { className: "break-container" }, /*#__PURE__*/
-      React.createElement(SetTimerLength, {
+    /*  React.createElement("div", { className: "length-container" }, /*#__PURE__*/
+     /* React.createElement("div", { className: "break-container" }, /*#__PURE__*/
+    /*  React.createElement(SetTimerLength, {
         timerLabelId: "break-label",
         timerLabel: "Break Length",
         timerLen: this.state.breakLen,
@@ -173,8 +173,8 @@ class App extends React.Component {
         handleIncrementTimer: this.handleIncrementBreak })), /*#__PURE__*/
 
 
-      React.createElement("div", { className: "session-container" }, /*#__PURE__*/
-      React.createElement(SetTimerLength, {
+     /* React.createElement("div", { className: "session-container" }, /*#__PURE__*/
+     /* React.createElement(SetTimerLength, {
         timerLabelId: "session-label",
         timerLabel: "Session Length",
         timerLen: this.state.sessionLen,
@@ -186,7 +186,7 @@ class App extends React.Component {
 
 
 
-      React.createElement("audio", {
+      /*React.createElement("audio", {
         id: "beep",
         load: "auto",
         ref: audio => {
@@ -208,13 +208,13 @@ class SetTimerLength extends React.Component {
 
   render() {
     return /*#__PURE__*/(
-      React.createElement("div", null, /*#__PURE__*/
-      React.createElement("div", { id: this.props.timerLabelId }, this.props.timerLabel), /*#__PURE__*/
-      React.createElement("span", { id: this.props.timerLenId, className: "timer-length" },
-      this.props.timerLen), /*#__PURE__*/
+     /* React.createElement("div", null, /*#__PURE__*/
+     /* React.createElement("div", { id: this.props.timerLabelId }, this.props.timerLabel), /*#__PURE__*/
+     /* React.createElement("span", { id: this.props.timerLenId, className: "timer-length" },
+     /* this.props.timerLen), /*#__PURE__*/
 
-      React.createElement("div", { className: "inc-dec-btn-container" }, /*#__PURE__*/
-      React.createElement("button", {
+     /* React.createElement("div", { className: "inc-dec-btn-container" }, /*#__PURE__*/
+     /* React.createElement("button", {
         ref: this.buttonRefInc,
         className: "inc-arrow",
         onClick: () => {
@@ -222,16 +222,16 @@ class SetTimerLength extends React.Component {
           this.buttonRefInc.current.blur();
         } }, /*#__PURE__*/
 
-      React.createElement("i", { id: this.props.incTimerId, className: "fa fa-arrow-up" })), /*#__PURE__*/
+      /*React.createElement("i", { id: this.props.incTimerId, className: "fa fa-arrow-up" })), /*#__PURE__*/
 
-      React.createElement("button", {
+     /* React.createElement("button", {
         ref: this.buttonRefDec,
         onClick: () => {
           this.props.handleDecrementTimer();
           this.buttonRefDec.current.blur();
         } }, /*#__PURE__*/
 
-      React.createElement("i", { id: this.props.decTimerId, className: "fa fa-arrow-down" })))));
+     /* React.createElement("i", { id: this.props.decTimerId, className: "fa fa-arrow-down" })))));
 
 
 
@@ -248,12 +248,12 @@ class Timer extends React.Component {
 
   render() {
     return /*#__PURE__*/(
-      React.createElement("div", null, /*#__PURE__*/
-      React.createElement("div", { id: "time-left" }, this.props.timeLeft), /*#__PURE__*/
-      React.createElement("div", { id: "display-controls" }, /*#__PURE__*/
-      React.createElement("div", { id: "timer-label" }, this.props.timerType), /*#__PURE__*/
-      React.createElement("div", { id: "timer-ssr" }, /*#__PURE__*/
-      React.createElement("button", {
+     /* React.createElement("div", null, /*#__PURE__*/
+     /* React.createElement("div", { id: "time-left" }, this.props.timeLeft), /*#__PURE__*/
+      /*React.createElement("div", { id: "display-controls" }, /*#__PURE__*/
+      /*React.createElement("div", { id: "timer-label" }, this.props.timerType), /*#__PURE__*/
+      /*React.createElement("div", { id: "timer-ssr" }, /*#__PURE__*/
+      /*React.createElement("button", {
         ref: this.buttonRefStartStop,
         id: "start-stop",
         onClick: () => {
@@ -261,9 +261,9 @@ class Timer extends React.Component {
           this.buttonRefStartStop.current.blur();
         } }, /*#__PURE__*/
 
-      React.createElement("i", { className: this.props.stopStartTimer, "aria-hidden": "true" })), /*#__PURE__*/
+      /*React.createElement("i", { className: this.props.stopStartTimer, "aria-hidden": "true" })), /*#__PURE__*/
 
-      React.createElement("button", {
+      /*React.createElement("button", {
         ref: this.buttonRefReset,
         id: "reset",
         onClick: () => {
@@ -271,7 +271,7 @@ class Timer extends React.Component {
           this.buttonRefReset.current.blur();
         } }, /*#__PURE__*/
 
-      React.createElement("i", { className: "fa fa-refresh", "aria-hidden": "true" }))))));
+     /* React.createElement("i", { className: "fa fa-refresh", "aria-hidden": "true" }))))));
 
 
 
@@ -280,4 +280,4 @@ class Timer extends React.Component {
   }}
 
 
-ReactDOM.render( /*#__PURE__*/React.createElement(App, null), document.getElementById("root"));
+/*ReactDOM.render( /*#__PURE__*//*React.createElement(App, null), document.getElementById("root"));
