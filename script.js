@@ -217,7 +217,7 @@ class SetTimerLength extends React.Component {
       React.createElement("button", {
         ref: this.buttonRefInc,
         className: "inc-arrow",
-        onClick: () => {
+       // onClick: () => {
           this.props.handleIncrementTimer();
           this.buttonRefInc.current.blur();
         } }, /*#__PURE__*/
@@ -226,7 +226,7 @@ class SetTimerLength extends React.Component {
 
       React.createElement("button", {
         ref: this.buttonRefDec,
-        onClick: () => {
+        //onClick: () => {
           this.props.handleDecrementTimer();
           this.buttonRefDec.current.blur();
         } }, /*#__PURE__*/
@@ -256,7 +256,7 @@ class Timer extends React.Component {
       React.createElement("button", {
         ref: this.buttonRefStartStop,
         id: "start-stop",
-        onClick: () => {
+       // onClick: () => {
           this.props.toggleStartStopTimer();
           this.buttonRefStartStop.current.blur();
         } }, /*#__PURE__*/
@@ -266,7 +266,7 @@ class Timer extends React.Component {
       React.createElement("button", {
         ref: this.buttonRefReset,
         id: "reset",
-        onClick: () => {
+        //onClick: () => {
           this.props.resetTimer();
           this.buttonRefReset.current.blur();
         } }, /*#__PURE__*/
