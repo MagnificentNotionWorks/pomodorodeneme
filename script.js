@@ -1,8 +1,8 @@
 import React from "https://cdn.skypack.dev/react@17.0.1";
 import ReactDOM from "https://cdn.skypack.dev/react-dom@17.0.1";
 
-const SESSION = "Session";
-const BREAK = "Break";
+//const SESSION = "Session";
+//const BREAK = "Break";
 const SESSIONLEN = 25;
 const BREAKLEN = 5;
 
@@ -42,114 +42,114 @@ class App extends React.Component {
   }
 
 //  handleDecrementBreak() {
-    if (!this.state.isTimerRunning && this.state.breakLen > 1) {
-      this.setState({
-        breakLen: this.state.breakLen - 1,
-        timeLeft:
-        this.state.timerType === BREAK ?
-        (this.state.breakLen - 1) * 60 :
-        this.state.timeLeft });
+    //if (!this.state.isTimerRunning && this.state.breakLen > 1) {
+     //  this.setState({
+       //  breakLen: this.state.breakLen - 1,
+       //  timeLeft:
+       //  this.state.timerType === BREAK ?
+       //  (this.state.breakLen - 1) * 60 :
+       //  this.state.timeLeft });
 
     }
   }
 
  // handleIncrementBreak() {
-    if (!this.state.isTimerRunning && this.state.breakLen < 60) {
-      this.setState({
-        breakLen: this.state.breakLen + 1,
-        timeLeft:
-        this.state.timerType === BREAK ?
-        (this.state.breakLen + 1) * 60 :
-        this.state.timeLeft });
+ //    if (!this.state.isTimerRunning && this.state.breakLen < 60) {
+     //  this.setState({
+     //    breakLen: this.state.breakLen + 1,
+      //   timeLeft:
+      //   this.state.timerType === BREAK ?
+       //  (this.state.breakLen + 1) * 60 :
+       //  this.state.timeLeft });
 
     }
   }
 
  // handleDecrementSession() {
-    if (!this.state.isTimerRunning && this.state.sessionLen > 1) {
-      this.setState({
-        sessionLen: this.state.sessionLen - 1,
-        timeLeft:
-        this.state.timerType === SESSION ?
-        (this.state.sessionLen - 1) * 60 :
-        this.state.timeLeft });
+   //  if (!this.state.isTimerRunning && this.state.sessionLen > 1) {
+    //   this.setState({
+     //    sessionLen: this.state.sessionLen - 1,
+      //   timeLeft:
+       //  this.state.timerType === SESSION ?
+       //  (this.state.sessionLen - 1) * 60 :
+       //  this.state.timeLeft });
 
     }
   }
 
  // handleIncrementSession() {
-    if (!this.state.isTimerRunning && this.state.sessionLen < 60) {
-      this.setState({
-        sessionLen: this.state.sessionLen + 1,
-        timeLeft:
-        this.state.timerType === SESSION ?
-        (this.state.sessionLen + 1) * 60 :
-        this.state.timeLeft });
+   //  if (!this.state.isTimerRunning && this.state.sessionLen < 60) {
+    //   this.setState({
+     //    sessionLen: this.state.sessionLen + 1,
+      //   timeLeft:
+      //   this.state.timerType === SESSION ?
+     //    (this.state.sessionLen + 1) * 60 :
+      //   this.state.timeLeft });
 
     }
   }
 
  // resetTimer() {
-    clearInterval(this.state.intervalId);
-    this.setState({
-      breakLen: BREAKLEN, // min
-      sessionLen: SESSIONLEN, // min
-      timeLeft: SESSIONLEN * 60, // sec
-      timerType: SESSION,
-      isTimerRunning: false,
-      intervalId: "" });
+   //  clearInterval(this.state.intervalId);
+   //  this.setState({
+    //   breakLen: BREAKLEN, // min
+    //   sessionLen: SESSIONLEN, // min
+     //  timeLeft: SESSIONLEN * 60, // sec
+    //   timerType: SESSION,
+     //  isTimerRunning: false,
+    //   intervalId: "" });
 
-    this.beepSound.pause();
-    this.beepSound.currentTime = 0;
+ //    this.beepSound.pause();
+  //   this.beepSound.currentTime = 0;
   }
 
  // runTimer() {
-    let intervalId = setInterval(() => {
-      this.setState(
-      {
-        timeLeft: this.state.timeLeft - 1 },
+    // let intervalId = setInterval(() => {
+   //    this.setState(
+     //  {
+     //    timeLeft: this.state.timeLeft - 1 },
 
-      () => {
-        if (this.state.timeLeft === 0) {
-          this.beepSound.play();
-        }
-        if (this.state.timeLeft < 0) {
-          if (this.state.intervalId) clearInterval(this.state.intervalId);
-          this.changeTimerType();
-        }
-      });
+     //  () => {
+     //   if (this.state.timeLeft === 0) {
+     //      this.beepSound.play();
+      //   }
+      //   if (this.state.timeLeft < 0) {
+       //    if (this.state.intervalId) clearInterval(this.state.intervalId);
+       //    this.changeTimerType();
+     //    }
+    //   });
 
-    }, 1000);
-    this.setState({
-      intervalId });
+   //  }, 1000);
+  //   this.setState({
+   //    intervalId });
 
-  }
+  // }
 
  // toggleStartStopTimer() {
-    if (!this.state.isTimerRunning) {
-      this.runTimer();
-      this.setState({ isTimerRunning: true });
-    } else {
-      clearInterval(this.state.intervalId);
-      this.setState({
-        isTimerRunning: false,
-        intervalId: "" });
+    // if (!this.state.isTimerRunning) {
+      // this.runTimer();
+      // this.setState({ isTimerRunning: true });
+    // } else {
+      // clearInterval(this.state.intervalId);
+      // this.setState({
+        // isTimerRunning: false,
+        // intervalId: "" });
 
     }
   }
 
  // clockify() {
-    let minutes = Math.floor(this.state.timeLeft / 60);
-    let seconds = this.state.timeLeft - minutes * 60;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    return minutes + ":" + seconds;
-  }
+ //    let minutes = Math.floor(this.state.timeLeft / 60);
+    // let seconds = this.state.timeLeft - minutes * 60;
+    // seconds = seconds < 10 ? "0" + seconds : seconds;
+    // minutes = minutes < 10 ? "0" + minutes : minutes;
+    // return minutes + ":" + seconds;
+  // }
 
  // render() {
-    let stopStartTimer = this.state.isTimerRunning ?
-    "fa fa-pause" :
-    "fa fa-play";
+  //   let stopStartTimer = this.state.isTimerRunning ?
+  //   "fa fa-pause" :
+  //   "fa fa-play";
 
     return /*#__PURE__*/(
       React.createElement("div", { className: "clock-container" }, /*#__PURE__*/
@@ -199,7 +199,7 @@ class App extends React.Component {
   }}
 
 
-class SetTimerLength extends React.Component {
+// class SetTimerLength extends React.Component {
   constructor(props) {
     super(props);
     this.buttonRefInc = React.createRef();
@@ -239,7 +239,7 @@ class SetTimerLength extends React.Component {
   }}
 
 
-class Timer extends React.Component {
+// class Timer extends React.Component {
   constructor(props) {
     super(props);
     this.buttonRefStartStop = React.createRef();
