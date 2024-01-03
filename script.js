@@ -17,31 +17,31 @@ class App extends React.Component {
       isTimerRunning: false,
       intervalId: "" };
 
-    this.changeTimerType = this.changeTimerType.bind(this);
-    this.handleDecrementBreak = this.handleDecrementBreak.bind(this);
-    this.handleIncrementBreak = this.handleIncrementBreak.bind(this);
-    this.handleDecrementSession = this.handleDecrementSession.bind(this);
-    this.handleIncrementSession = this.handleIncrementSession.bind(this);
-    this.resetTimer = this.resetTimer.bind(this);
-    this.toggleStartStopTimer = this.toggleStartStopTimer.bind(this);
+    // this.changeTimerType = this.changeTimerType.bind(this);
+   // this.handleDecrementBreak = this.handleDecrementBreak.bind(this);
+   // this.handleIncrementBreak = this.handleIncrementBreak.bind(this);
+   // this.handleDecrementSession = this.handleDecrementSession.bind(this);
+   // this.handleIncrementSession = this.handleIncrementSession.bind(this);
+   // this.resetTimer = this.resetTimer.bind(this);
+   // this.toggleStartStopTimer = this.toggleStartStopTimer.bind(this);
   }
 
-  changeTimerType() {
-    this.setState(
+ // changeTimerType() {
+   // this.setState(
     {
-      timerType: this.state.timerType === SESSION ? BREAK : SESSION,
-      timeLeft:
-      this.state.timerType === SESSION ?
-      this.state.breakLen * 60 :
-      this.state.sessionLen * 60 },
+     // timerType: this.state.timerType === SESSION ? BREAK : SESSION,
+     // timeLeft:
+     // this.state.timerType === SESSION ?
+     // this.state.breakLen * 60 :
+     // this.state.sessionLen * 60 },
 
     () => {
-      this.runTimer();
+     // this.runTimer();
     });
 
   }
 
-  handleDecrementBreak() {
+//  handleDecrementBreak() {
     if (!this.state.isTimerRunning && this.state.breakLen > 1) {
       this.setState({
         breakLen: this.state.breakLen - 1,
@@ -53,7 +53,7 @@ class App extends React.Component {
     }
   }
 
-  handleIncrementBreak() {
+ // handleIncrementBreak() {
     if (!this.state.isTimerRunning && this.state.breakLen < 60) {
       this.setState({
         breakLen: this.state.breakLen + 1,
@@ -65,7 +65,7 @@ class App extends React.Component {
     }
   }
 
-  handleDecrementSession() {
+ // handleDecrementSession() {
     if (!this.state.isTimerRunning && this.state.sessionLen > 1) {
       this.setState({
         sessionLen: this.state.sessionLen - 1,
@@ -77,7 +77,7 @@ class App extends React.Component {
     }
   }
 
-  handleIncrementSession() {
+ // handleIncrementSession() {
     if (!this.state.isTimerRunning && this.state.sessionLen < 60) {
       this.setState({
         sessionLen: this.state.sessionLen + 1,
@@ -89,7 +89,7 @@ class App extends React.Component {
     }
   }
 
-  resetTimer() {
+ // resetTimer() {
     clearInterval(this.state.intervalId);
     this.setState({
       breakLen: BREAKLEN, // min
@@ -103,7 +103,7 @@ class App extends React.Component {
     this.beepSound.currentTime = 0;
   }
 
-  runTimer() {
+ // runTimer() {
     let intervalId = setInterval(() => {
       this.setState(
       {
@@ -125,7 +125,7 @@ class App extends React.Component {
 
   }
 
-  toggleStartStopTimer() {
+ // toggleStartStopTimer() {
     if (!this.state.isTimerRunning) {
       this.runTimer();
       this.setState({ isTimerRunning: true });
@@ -138,7 +138,7 @@ class App extends React.Component {
     }
   }
 
-  clockify() {
+ // clockify() {
     let minutes = Math.floor(this.state.timeLeft / 60);
     let seconds = this.state.timeLeft - minutes * 60;
     seconds = seconds < 10 ? "0" + seconds : seconds;
@@ -146,7 +146,7 @@ class App extends React.Component {
     return minutes + ":" + seconds;
   }
 
-  render() {
+ // render() {
     let stopStartTimer = this.state.isTimerRunning ?
     "fa fa-pause" :
     "fa fa-play";
