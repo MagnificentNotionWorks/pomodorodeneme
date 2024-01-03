@@ -215,9 +215,9 @@ class SetTimerLength extends React.Component {
 
       React.createElement("div", { className: "inc-dec-btn-container" }, /*#__PURE__*/
       React.createElement("button", {
-        ref: this.buttonRefInc,
+        ref: this.buttonRefInc_,
         className: "inc-arrow",
-       // onClick: () => {
+        onClick: () => {
           this.props.handleIncrementTimer();
           this.buttonRefInc.current.blur();
         } }, /*#__PURE__*/
@@ -225,8 +225,8 @@ class SetTimerLength extends React.Component {
       React.createElement("i", { id: this.props.incTimerId, className: "fa fa-arrow-up" })), /*#__PURE__*/
 
       React.createElement("button", {
-        ref: this.buttonRefDec,
-        //onClick: () => {
+        ref: this.buttonRefDec_,
+        onClick: () => {
           this.props.handleDecrementTimer();
           this.buttonRefDec.current.blur();
         } }, /*#__PURE__*/
@@ -242,8 +242,8 @@ class SetTimerLength extends React.Component {
 class Timer extends React.Component {
   constructor(props) {
     super(props);
-    this.buttonRefStartStop = React.createRef();
-    this.buttonRefReset = React.createRef();
+    this.buttonRefStartStop_ = React.createRef();
+    this.buttonRefReset_ = React.createRef();
   }
 
   render() {
@@ -255,8 +255,8 @@ class Timer extends React.Component {
       React.createElement("div", { id: "timer-ssr" }, /*#__PURE__*/
       React.createElement("button", {
         ref: this.buttonRefStartStop,
-        id: "start-stop",
-       // onClick: () => {
+        id: "start-stop_",
+        onClick: () => {
           this.props.toggleStartStopTimer();
           this.buttonRefStartStop.current.blur();
         } }, /*#__PURE__*/
@@ -265,8 +265,8 @@ class Timer extends React.Component {
 
       React.createElement("button", {
         ref: this.buttonRefReset,
-        id: "reset",
-        //onClick: () => {
+        id: "reset_",
+        onClick: () => {
           this.props.resetTimer();
           this.buttonRefReset.current.blur();
         } }, /*#__PURE__*/
